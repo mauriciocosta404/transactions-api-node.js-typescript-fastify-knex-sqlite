@@ -1,0 +1,27 @@
+{
+  "name": "projecto_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "knex": "node --loader tsx ./node_modules/.bin/knex",
+    "dev": "tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.2.2",
+    "@types/node": "^20.12.7",
+    "eslint": "^8.57.0",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fastify": "^4.26.2",
+    "knex": "^3.1.0",
+    "sqlite3": "^5.1.7",
+    "zod": "^3.22.5"
+  }
+}
