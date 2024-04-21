@@ -1,9 +1,9 @@
 import { FastifyInstance } from "fastify";
 import { knex } from "../database";
-import {z} from "zod"
-import {randomUUID} from "node:crypto"
+import {z} from "zod";
+import {randomUUID} from "node:crypto"; 
 
-export async function transactionsRoutes (app: FastifyInstance){
+export async function transactionsRoutes(app: FastifyInstance){
     app.post('/', async (request, reply) => {
        
         const createTransactionsBodySchema = z.object({
