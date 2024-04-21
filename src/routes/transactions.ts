@@ -10,7 +10,7 @@ export async function transactionsRoutes (app: FastifyInstance){
             title: z.string(),
             amount: z.number(),
             type: z.enum(['credit','debit']),
-       }); 
+        }); 
 
        const {title, amount, type} = createTransactionsBodySchema.parse(request.body);
     
@@ -18,7 +18,7 @@ export async function transactionsRoutes (app: FastifyInstance){
             id: randomUUID(),
             title,
             amount: type === 'credit' ? amount: amount*-1,
-       });
+        });
 
        return reply.status(201).send("created");
     });
