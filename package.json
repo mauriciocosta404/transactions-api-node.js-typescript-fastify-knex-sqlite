@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test":"vitest",
     "knex": "node --loader tsx ./node_modules/.bin/knex",
     "dev": "tsx watch src/server.ts"
   },
