@@ -3,11 +3,10 @@ import { knex } from "../database";
 import {z} from "zod";
 import {randomUUID} from "node:crypto"; 
 import { checkSessionIdExists } from "../middlewares/check-session-id-exists";
-
+    
 export async function transactionsRoutes(app: FastifyInstance){
     app.get('/' ,{ preHandler:[checkSessionIdExists]}, async (request, reply) => {
         const sessionId = request.cookies.sessionId;
-
         const transactions = await knex('transactions').select().where('session_id', sessionId);
 
         return {transactions}
