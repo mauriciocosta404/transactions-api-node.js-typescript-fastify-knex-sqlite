@@ -1,22 +1,24 @@
-import {describe, expect, test, beforeAll, afterAll} from "vitest";
+import {describe, expect, test, beforeAll, afterAll, it} from "vitest";
 import { app } from "../app";
 import request from "supertest";
 
-beforeAll(async()=>{
-    await app.ready()    
+describe("Transactions routes", ()=>{
+    beforeAll(async()=>{
+        await app.ready()    
+    });
+    
+    afterAll(async()=>{
+        app.close();
+    });
+    
+    it('it user should create new transaction', async () => {
+        const response = await request(app.server).post('/transactions').send({
+            "title":"new transaction",
+            "amount":5000,
+            "type": "credit"
+          });
+    
+    
+        expect(response.statusCode).toEqual(201);
+    })
 });
-
-afterAll(async()=>{
-    app.close();
-})
-
-test('user should create new transaction', async () => {
-    const response = await request(app.server).post('/transactions').send({
-        "title":"new transaction",
-        "amount":5000,
-        "type": "credit"
-      });
-
-
-    expect(response.statusCode).toEqual(201);
-})
