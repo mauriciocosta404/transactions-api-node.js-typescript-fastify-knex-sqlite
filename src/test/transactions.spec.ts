@@ -3,11 +3,11 @@ import { app } from "../app";
 import request from "supertest";
 
 describe("Transactions routes", ()=>{
-    beforeAll(async()=>{
+    beforeAll(async () => {
         await app.ready()    
     });
     
-    afterAll(async()=>{
+    afterAll(async () => {
         app.close();
     });
     
