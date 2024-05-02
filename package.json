@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"vitest",
+    "test": "vitest",
     "knex": "node --loader tsx ./node_modules/.bin/knex",
     "dev": "tsx watch src/server.ts"
   },
@@ -14,7 +14,9 @@
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
     "@types/node": "^20.12.7",
+    "@types/supertest": "^6.0.2",
     "eslint": "^8.57.0",
+    "supertest": "^7.0.0",
     "tsx": "^4.7.2",
     "typescript": "^5.4.5",
     "vitest": "^1.5.2"
